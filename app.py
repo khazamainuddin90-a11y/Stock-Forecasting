@@ -74,13 +74,9 @@ if st.button("Predict"):
 
     latest_price = float(np.array(data["Close"].iloc[-1]).flatten()[0])
 
-    col1, col2 = st.columns(2)
+   st.subheader("Prediction Result")
 
-with col1:
-    st.metric("Latest Price", f"₹{latest_price:.2f}")
-
-with col2:
-    st.metric("Predicted Price", f"₹{next_price:.2f}")
+st.metric("Predicted Next Price", f"₹{next_price:.2f}")
     st.subheader("Stock Price History")
 
 chart_data = data["Close"]
